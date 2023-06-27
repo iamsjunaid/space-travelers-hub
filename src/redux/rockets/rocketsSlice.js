@@ -17,7 +17,7 @@ export const fetchRockets = createAsyncThunk(
     } catch (error) {
       return error;
     }
-  }
+  },
 );
 
 export const RocketsSlice = createSlice({
@@ -39,14 +39,12 @@ export const RocketsSlice = createSlice({
       }))
       .addCase(fetchRockets.fulfilled, (state, action) => {
         const newRockets = [];
-        action.payload.map((rocket) =>
-          newRockets.push({
-            id: rocket.id,
-            name: rocket.rocket_name,
-            description: rocket.description,
-            image: rocket.flickr_images[0],
-          })
-        );
+        action.payload.map((rocket) => newRockets.push({
+          id: rocket.id,
+          name: rocket.rocket_name,
+          description: rocket.description,
+          image: rocket.flickr_images[0],
+        }));
         return {
           ...state,
           isLoading: false,
