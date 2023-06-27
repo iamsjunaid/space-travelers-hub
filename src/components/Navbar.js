@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import logo from '../images/planet.png';
 import '../styles/Navbar.css';
-import Rockets from './navigation/Rockets';
-import Missions from './navigation/Missions';
-import Dragons from './navigation/Dragons';
+import Rockets from './navigation/RocketsList';
+import Missions from './navigation/MissionsList';
+import Dragons from './navigation/DragonsList';
 import MyProfile from './navigation/MyProfile';
 
 function Navbar() {
