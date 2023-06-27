@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchmissions } from '../../redux/missions/missionsSlice';
+import Mission from './Mission';
 
 function MissionsList() {
   const { missions, isLoading } = useSelector((state) => state.missions);
@@ -17,27 +18,17 @@ function MissionsList() {
   }
 
   return (
-    <div>
-      mission list
-      <table>
-        <thead>
-          <tr>
-            <td>mission_id</td>
-            <td>mission_name</td>
-            <td>description</td>
-          </tr>
-        </thead>
-        <tbody>
-          {missions.map((mission) => (
-            <tr key={mission.mission_id}>
-              <td>{mission.mission_id}</td>
-              <td>{mission.mission_name}</td>
-              <td>{mission.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <ul className="rocketList">
+      {missions.map((mission) => (
+        <Mission
+          key={mission.id}
+          id={mission.id}
+          name={mission.name}
+          description={mission.description}
+        />
+      ))}
+      ;
+    </ul>
   );
 }
 

@@ -40,10 +40,10 @@ export const missionsSlice = createSlice({
       .addCase(fetchmissions.fulfilled, (state, action) => {
         const newmissions = [];
         action.payload.map((rocket) => newmissions.push({
-          id: rocket.id,
-          name: rocket.rocket_name,
+          id: rocket.mission_id,
+          name: rocket.mission_name,
           description: rocket.description,
-          image: rocket.flickr_images[0],
+          // image: rocket.flickr_images[0],
         }));
         return {
           ...state,
