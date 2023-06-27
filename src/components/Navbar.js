@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import logo from '../images/planet.png';
 import '../styles/Navbar.css';
@@ -8,16 +8,21 @@ import Dragons from './navigation/Dragons';
 import MyProfile from './navigation/MyProfile';
 
 function Navbar() {
-  const [activeLink, setActiveLink] = useState('/'); // Set initial active link to "/"
+  const [activeLink, setActiveLink] = useState('/');
+
+  useEffect(() => {
+    setActiveLink('/rockets'); // Set '/rockets' as the default active link
+  }, []);
+
   return (
     <>
       <nav>
         <ul>
           <li>
             <Link
-              to="/"
-              onClick={() => setActiveLink('/')}
-              className={activeLink === '/' ? 'active' : ''}
+              to="/rockets"
+              onClick={() => setActiveLink('/rockets')}
+              className={activeLink === '/rockets' ? 'active' : ''}
             >
               <img src={logo} alt="logo" />
             </Link>
@@ -26,7 +31,6 @@ function Navbar() {
         </ul>
         <ul>
           <li>
-            {' '}
             <Link
               to="/rockets"
               onClick={() => setActiveLink('/rockets')}
