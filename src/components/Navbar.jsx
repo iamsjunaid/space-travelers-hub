@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import logo from '../images/planet.png';
 import '../styles/Navbar.css';
-import Rockets from './Navigation/Rockets';
-import Missions from './Navigation/Missions';
-import Dragons from './Navigation/Dragons';
-import MyProfile from './Navigation/MyProfile';
+import Rockets from './navigation/Rockets';
+import Missions from './navigation/Missions';
+import Dragons from './navigation/Dragons';
+import MyProfile from './navigation/MyProfile';
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState('/'); // Set initial active link to "/"
