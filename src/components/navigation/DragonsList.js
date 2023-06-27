@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Dragons() {
+function DragonsList() {
   return (
     <div>Dragons</div>
   );
 }
 
-export default Dragons;
+export default DragonsList;

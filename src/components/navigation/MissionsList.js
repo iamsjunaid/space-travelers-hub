@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Missions() {
+function MissionsList() {
   return (
     <div>Missions</div>
   );
 }
 
-export default Missions;
+export default MissionsList;
