@@ -1,0 +1,9 @@
+.rocket {
+  display: flex;
+  border: 2px solid black;
+}
+
+.rocket img {
+  width: 350px;
+  object-fit: contain;
+}
