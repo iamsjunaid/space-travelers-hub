@@ -25,6 +25,7 @@ function DragonsList() {
         {dragons.map((dragon) => (
           <Dragons
             key={dragon.id}
+            id={dragon.id}
             name={dragon.name}
             type={dragon.type}
             image={dragon.image}
