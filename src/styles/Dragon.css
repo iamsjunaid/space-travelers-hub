@@ -1,0 +1,16 @@
+.dragon-cont ul {
+  display: flex;
+  border: 2px solid;
+  gap: 21px;
+  margin: 10px;
+}
+
+.dragon-cont img {
+  width: 280px;
+  height: 250px;
+}
+
+.loading {
+  font-size: 20px;
+  font-weight: bold;
+}
