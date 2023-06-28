@@ -1,4 +1,4 @@
-.dragon{
+.dragon {
   display: flex;
   flex-direction: row;
   gap: 21px;
@@ -15,32 +15,28 @@
   font-weight: bold;
 }
 
-.reserved{
-    background:#007bff;
-    color: #fff;
+.reserved {
+  background: #007bff;
+  color: #fff;
 }
 
-.dragon{
-    display: flex;
-    flex-direction: row;
-}
-
-.reserve-btn{
+.reserve-btn {
   background-color: #007bff;
   border: none;
   color: #fff;
   padding: 12px 16px;
   border-radius: 0.2rem;
 }
-.cancel {
-    background-color: #fff;
-    color: #000;
-    border-radius: 5px;
-    padding: 12px 16px;
-    border: 1px solid #007bff;
-  }
 
-.heading{
-    font-size: 20px;
-    font-weight: bold;
+.cancel {
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  padding: 12px 16px;
+  border: 1px solid #007bff;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: bold;
 }
