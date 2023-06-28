@@ -1,11 +1,11 @@
-.dragon-cont ul {
+.dragon{
   display: flex;
-  border: 2px solid;
+  flex-direction: row;
   gap: 21px;
   margin: 10px;
 }
 
-.dragon-cont img {
+.dragon img {
   width: 280px;
   height: 250px;
 }
@@ -13,4 +13,34 @@
 .loading {
   font-size: 20px;
   font-weight: bold;
+}
+
+.reserved{
+    background:#007bff;
+    color: #fff;
+}
+
+.dragon{
+    display: flex;
+    flex-direction: row;
+}
+
+.reserve-btn{
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 0.2rem;
+}
+.cancel {
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    padding: 12px 16px;
+    border: 1px solid #007bff;
+  }
+
+.heading{
+    font-size: 20px;
+    font-weight: bold;
 }
