@@ -25,47 +25,49 @@ function Mission({
   return (
     <>
       <table>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <td>{name}</td>
-          <td>{description}</td>
-          <td>
-            <span className="">
-              {isMember ? 'Active Member' : 'Not A Member'}
-            </span>
-          </td>
-          <td>
-            {!reserved && (
-              <button
-                className="reserve-mission"
-                type="button"
-                onClick={handleJoinMission}
-              >
-                Join Mission
-              </button>
-            )}
-            {reserved && (
-              <button
-                className="cancel-mission"
-                type="button"
-                onClick={handleLeaveMission}
-              >
-                Leave Mission
-              </button>
-            )}
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td>{name}</td>
+            <td>{description}</td>
+            <td>
+              <span className="">
+                {isMember ? 'Active Member' : 'Not A Member'}
+              </span>
+            </td>
+            <td>
+              {!reserved && (
+                <button
+                  className="reserve-mission"
+                  type="button"
+                  onClick={handleJoinMission}
+                >
+                  Join Mission
+                </button>
+              )}
+              {reserved && (
+                <button
+                  className="cancel-mission"
+                  type="button"
+                  onClick={handleLeaveMission}
+                >
+                  Leave Mission
+                </button>
+              )}
+            </td>
+          </tr>
+        </tbody>
       </table>
     </>
   );
 }
 
 Mission.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   reserved: PropTypes.bool.isRequired,
