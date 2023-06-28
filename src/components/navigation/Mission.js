@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { reserveMission, cancelReserve } from '../../redux/missions/missionsSlice';
+import {
+  reserveMission,
+  cancelReserve,
+} from '../../redux/missions/missionsSlice';
 
 function Mission({
   id, name, description, reserved,
@@ -20,30 +23,44 @@ function Mission({
   };
 
   return (
-    <li className="mission">
-      <div>
-        <h3>{name}</h3>
-        <div>
-          <p>
-            <span>
-              {description}
+    <>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>{name}</td>
+          <td>{description}</td>
+          <td>
+            <span className="">
+              {isMember ? 'Active Member' : 'Not A Member'}
             </span>
-          </p>
-        </div>
-
-        <span className="">{isMember ? 'Active Member' : 'Not A Member'}</span>
-        {!reserved && (
-          <button className="reserve-mission" type="button" onClick={handleJoinMission}>
-            Join Mission
-          </button>
-        )}
-        {reserved && (
-          <button className="cancel-mission" type="button" onClick={handleLeaveMission}>
-            Leave Mission
-          </button>
-        )}
-      </div>
-    </li>
+          </td>
+          <td>
+            {!reserved && (
+              <button
+                className="reserve-mission"
+                type="button"
+                onClick={handleJoinMission}
+              >
+                Join Mission
+              </button>
+            )}
+            {reserved && (
+              <button
+                className="cancel-mission"
+                type="button"
+                onClick={handleLeaveMission}
+              >
+                Leave Mission
+              </button>
+            )}
+          </td>
+        </tr>
+      </table>
+    </>
   );
 }
 
