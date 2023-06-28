@@ -9,7 +9,7 @@ function DragonsList() {
 
   useEffect(() => {
     dispatch(fetchDragons());
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return <p className="loading">Loading...</p>;
