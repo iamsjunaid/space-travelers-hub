@@ -29,6 +29,7 @@ function DragonsList() {
             name={dragon.name}
             type={dragon.type}
             image={dragon.image}
+            reserved={dragon.reserved}
           />
         ))}
       </ul>
