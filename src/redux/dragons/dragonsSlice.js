@@ -11,7 +11,6 @@ export const fetchDragons = createAsyncThunk('dragons/fetchDragons', async () =>
   try {
     const response = await fetch(urlBase);
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     throw new Error('Failed to fetch dragons');

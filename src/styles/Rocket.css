@@ -1,9 +1,41 @@
 .rocket {
   display: flex;
-  border: 2px solid black;
+  gap: 0.5em;
 }
 
 .rocket img {
   width: 350px;
   object-fit: contain;
+}
+
+.rocket button {
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  width: 12em;
+}
+
+.reserve-rocket {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+}
+
+.cancel-rocket {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.rocket h3 {
+  font-weight: normal;
+}
+
+.reserved {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 12px;
 }

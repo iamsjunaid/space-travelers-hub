@@ -10,8 +10,7 @@ function MissionsList() {
 
   useEffect(() => {
     dispatch(fetchmissions());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return <h2 className="missionLoading">Loading...</h2>;
