@@ -55,6 +55,7 @@ export const dragonsSlice = createSlice({
           name: dragon.name,
           type: dragon.type,
           image: dragon.flickr_images[0],
+          reserved: false,
         }));
         return {
           ...state,
