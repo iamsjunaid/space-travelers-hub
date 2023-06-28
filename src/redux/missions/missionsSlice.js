@@ -24,12 +24,26 @@ export const missionsSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
-    reserveRocket: (state) => ({
-      ...state,
-    }),
-    cancelReserve: (state) => ({
-      ...state,
-    }),
+    reserveMission: (state, action) => {
+      const newMissions = state.missions.map((mission) => {
+        if (mission.id !== action.payload) return mission;
+        return { ...mission, reserved: true };
+      });
+      return {
+        ...state,
+        missions: newMissions,
+      };
+    },
+    cancelReserve: (state, action) => {
+      const newMissions = state.missions.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      return {
+        ...state,
+        missions: newMissions,
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -39,11 +53,10 @@ export const missionsSlice = createSlice({
       }))
       .addCase(fetchmissions.fulfilled, (state, action) => {
         const newmissions = [];
-        action.payload.map((rocket) => newmissions.push({
-          id: rocket.mission_id,
-          name: rocket.mission_name,
-          description: rocket.description,
-          // image: rocket.flickr_images[0],
+        action.payload.map((mission) => newmissions.push({
+          id: mission.mission_id,
+          name: mission.mission_name,
+          description: mission.description,
         }));
         return {
           ...state,
@@ -58,5 +71,5 @@ export const missionsSlice = createSlice({
   },
 });
 
-export const { reserveRocket, cancelReserve } = missionsSlice.actions;
+export const { reserveMission, cancelReserve } = missionsSlice.actions;
 export default missionsSlice.reducer;

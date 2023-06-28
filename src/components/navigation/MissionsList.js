@@ -17,13 +17,15 @@ function MissionsList() {
   }
 
   return (
-    <ul className="rocketList">
+    <ul className="missionList">
       {missions.map((mission) => (
         <Mission
           key={mission.id}
           id={mission.id}
           name={mission.name}
           description={mission.description}
+          reserved={mission.reserved}
+
         />
       ))}
       ;
