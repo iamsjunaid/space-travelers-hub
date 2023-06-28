@@ -10,8 +10,7 @@ function RocketsList() {
 
   useEffect(() => {
     dispatch(fetchRockets());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return <h2 className="rocketLoading">Loading...</h2>;
@@ -22,9 +21,11 @@ function RocketsList() {
       {rockets.map((rocket) => (
         <Rocket
           key={rocket.id}
+          id={rocket.id}
           name={rocket.name}
           description={rocket.description}
           image={rocket.image}
+          reserved={rocket.reserved}
         />
       ))}
       ;
