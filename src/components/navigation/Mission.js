@@ -5,6 +5,7 @@ import {
   reserveMission,
   cancelReserve,
 } from '../../redux/missions/missionsSlice';
+import '../../styles/Mission.css';
 
 function Mission({
   id, name, description, reserved,
@@ -25,42 +26,41 @@ function Mission({
   return (
     <>
       <table>
-        <tbody>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Status</th>
-          </tr>
-          <tr>
-            <td>{name}</td>
-            <td>{description}</td>
-            <td>
-              <span className="">
-                {isMember ? 'Active Member' : 'Not A Member'}
-              </span>
-            </td>
-            <td>
-              {!reserved && (
-                <button
-                  className="reserve-mission"
-                  type="button"
-                  onClick={handleJoinMission}
-                >
-                  Join Mission
-                </button>
-              )}
-              {reserved && (
-                <button
-                  className="cancel-mission"
-                  type="button"
-                  onClick={handleLeaveMission}
-                >
-                  Leave Mission
-                </button>
-              )}
-            </td>
-          </tr>
-        </tbody>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th> </th>
+        </tr>
+        <tr>
+          <td>{name}</td>
+          <td>{description}</td>
+          <td>
+            <span className="">
+              {isMember ? 'Active Member' : 'Not A Member'}
+            </span>
+          </td>
+          <td>
+            {!reserved && (
+              <button
+                className="reserve-mission"
+                type="button"
+                onClick={handleJoinMission}
+              >
+                Join Mission
+              </button>
+            )}
+            {reserved && (
+              <button
+                className="cancel-mission"
+                type="button"
+                onClick={handleLeaveMission}
+              >
+                Leave Mission
+              </button>
+            )}
+          </td>
+        </tr>
       </table>
     </>
   );
