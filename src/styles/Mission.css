@@ -24,15 +24,24 @@ table {
     font-weight: bold;
   }
   
-  table td button {
-    padding: 8px;
-    background-color: #008cba;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+  .join-mission {
+    background-color: transparent;;
+    border-color: rgb(48, 46, 46);
+    border-radius: 8px;
     cursor: pointer;
   }
-  
-  table td button:hover {
-    background-color: #005b82;
+
+  .leave-mission {
+    border: 2px solid red;
+    color: red;
+  }
+
+  .non_member {
+    background-color: rgb(123, 122, 122);
+    color: #fff;
+    border: transparent;
+  }
+
+  .non_member.active {
+    background-color: rgb(122, 163, 190);
   }
