@@ -1,0 +1,47 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table td span {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #ccc;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.join-mission {
+  background-color: transparent;
+  border-color: rgb(48, 46, 46);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.leave-mission {
+  border: 2px solid red;
+  color: red;
+}
+
+.non_member {
+  background-color: rgb(123, 122, 122);
+  color: #fff;
+  border: transparent;
+}
+
+.non_member.active {
+  background-color: rgb(122, 163, 190);
+}
