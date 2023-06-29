@@ -5,7 +5,7 @@ import { cancelReservation, reserveDragon } from '../redux/dragons/dragonsSlice'
 import '../styles/Dragon.css';
 
 function Dragons({
-  id, name, type, image, reserved,
+  id, name, type, image, description, reserved,
 }) {
   const dispatch = useDispatch();
 
@@ -13,8 +13,6 @@ function Dragons({
     <li className="dragon">
       <img src={image} alt={name} />
       <div>
-        <p>{id}</p>
-
         <p>
           {reserved && <span className="reserved">Reserved</span>}
           {' '}
@@ -25,6 +23,11 @@ function Dragons({
         <p>
           <span>
             {type}
+          </span>
+        </p>
+        <p>
+          <span>
+            {description}
           </span>
         </p>
 
@@ -49,6 +52,7 @@ Dragons.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   reserved: PropTypes.bool.isRequired,
 };
 
