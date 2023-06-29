@@ -1,11 +1,10 @@
 table,
 td,
 th {
-    border: 1px solid;
+  border: 1px solid;
 }
 
 table {
-    width: 20%;
-    border-collapse: collapse;
+  width: 20%;
+  border-collapse: collapse;
 }
-
