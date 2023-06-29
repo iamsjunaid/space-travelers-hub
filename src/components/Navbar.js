@@ -16,7 +16,7 @@ function Navbar() {
 
   return (
     <>
-      <nav>
+      <nav className="navbar">
         <ul>
           <li>
             <Link
@@ -27,7 +27,9 @@ function Navbar() {
               <img src={logo} alt="logo" />
             </Link>
           </li>
-          <li>title</li>
+          <li>
+            <h1>Space Travelers&apos; Hub</h1>
+          </li>
         </ul>
         <ul>
           <li>
@@ -57,6 +59,7 @@ function Navbar() {
               Dragons
             </Link>
           </li>
+          <li className="vertical-bar" />
           <li>
             <Link
               to="/profile"

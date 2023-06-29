@@ -1,66 +1,190 @@
-# React and Redux
+ 
+<a id="readme-top"></a>
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+# 📗 Table of Contents
 
-## Set-up GitHub Actions
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ (OPTIONAL)](#faq)
+- [📝 License](#license)
 
-This GitHub Action is going to run [ESLint](https://eslint.org/) and [Stylelint](https://stylelint.io/) to help you find style issues.
+<!-- PROJECT DESCRIPTION -->
 
+# 📖 Space Travelers Hub <a name="about-project"></a>
 
-[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
+**Space Travelers Hub** In this project, I have worked with real live data from the SpaceX API. I have built a web application that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
+      
+ 
+## 🛠 Built With <a name="built-with"></a>
 
-[ESLint](https://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+### Tech Stack <a name="tech-stack"></a>
 
-Please do the following **steps in this order**:
+<details>
+  <summary>HTML</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML5</a></li>
+  </ul>
+</details>
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
+<details>
+<summary>CSS</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS3</a></li>
+  </ul>
+</details>
 
-![gh actions checks](../assets/images/gh-actions-eslint-stylelint-checks.png)
+<details>
+  <summary>Javascript</summary>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
+  </ul>
+</details>
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
+<details>
+  <summary>ReactJS</summary>
+  <ul>
+    <li><a href="https://legacy.reactjs.org/docs/getting-started.html">ReactJS</a></li>
+  </ul>
+</details>
 
-![gh actions failing checks](../assets/images/gh-actions-html-css-failing-checks.png)
+<details>
+  <summary>Redux</summary>
+  <ul>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+  </ul>
+</details>
 
-## Set-up linters in your local env
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### ESLint
+### Key Features <a name="key-features"></a>
 
-1. Run 
-    ```
-    npm install --save-dev eslint@7.x eslint-config-airbnb@18.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/eslint-parser@7.x @babel/core@7.x  @babel/plugin-syntax-jsx@7.x  @babel/preset-react@7.x @babel/preset-react@7.x
-    ```
-    *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
-2. Copy [.eslintrc.json](./.eslintrc.json) and [.babelrc](./.babelrc) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx eslint "**/*.{js,jsx}"` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Eslint](https://eslint.org/docs/latest/user-guide/command-line-interface#fixing-problems) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+*Rocket reservation and Management: Users can reserve a rocket,book a mission and a dragon providing a central place to organize their work.*<br>
 
-### Stylelint
+*Categorization and Labels: Each feature is categorized into different categories or assign labels, helping them to quickly identify based on specific criteria.*
 
-1. Run
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-   ```
-   npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-   ```
+## 🚀 Live Demo <a name="live-demo"></a>
 
-   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+- [Live Demo Link]()
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx stylelint "**/*.{css,scss}"` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/usage/options) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Test/Deployment Actions
+## 💻 Getting Started <a name="getting-started"></a>
 
-Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
+To get a local copy up and running, follow these steps.
 
-Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
+### Prerequisites
+
+In order to run this project you need to clone or fork and run it in a browser
+
+### Setup
+
+Clone this repository to your desired folder:
+
+Example commands:
+
+```sh
+  cd my-folder
+  git clone https://github.com/iamsjunaid/space-travelers-hub.git
+```
+For more information on how to clone or fork a repository:
+- <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">How to clone a repo</a>
+- <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">How to fork a repo</a>
+
+### Install
+
+- To install the package 
+```sh
+npm install
+```
+
+### Usage
+
+- To run the project
+
+```sh
+npm start
+```
+
+### Tests
+
+- To test the project run the following `cmd`:
+
+```sh
+npm run test
+OR
+npm test
+```
+
+- To check the linter issues
+
+```sh
+npx eslint "**/*.{js,jsx}"
+``` 
+
+```sh
+npx stylelint "**/*.{css,scss}"
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 Author : **Junaid Ahmed Syed**
+
+- Github : [@GitHub](https://github.com/iamsjunaid)
+- LinkedIn : [@LinkedIn](https://www.linkedin.com/in/junaidahmedsyed/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+    UI changes
+    Animations
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/iamsjunaid/space-travelers-hub/issues ).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project you can give a Star at project's [GitHub page](https://github.com/iamsjunaid/space-travelers-hub).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Microverse and the code reviewers for making this project better.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](https://github.com/iamsjunaid/space-travelers-hub/blob/main/LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+

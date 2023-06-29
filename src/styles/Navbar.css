@@ -1,10 +1,13 @@
 nav {
   display: flex;
   justify-content: space-between;
+  height: 100px;
+  border-bottom: 1px solid;
 }
 
 nav ul {
   display: flex;
+  align-items: center;
 }
 
 nav li {
@@ -14,7 +17,7 @@ nav li {
 
 nav li a {
   text-decoration: none;
-  color: black;
+  color: #007bff;
 }
 
 nav img {
@@ -24,4 +27,13 @@ nav img {
 
 .active {
   text-decoration: underline;
+}
+
+.navbar h1 {
+  font-weight: normal;
+}
+
+.vertical-bar {
+  border-right: 2px solid;
+  margin-left: -25px;
 }
