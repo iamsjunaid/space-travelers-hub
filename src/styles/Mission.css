@@ -46,8 +46,8 @@ table td span {
   border: transparent;
   text-align: center;
   margin-left: 8px;
- border-radius: 7px;
- min-width: 2px;
+  border-radius: 7px;
+  min-width: 2px;
 }
 
 .non_member.active {
