@@ -1,7 +1,9 @@
 table {
   border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
+  width: 80em;
+  margin: 1em auto;
+  box-sizing: border-box;
+  padding: 1em;
 }
 
 table th,
@@ -44,4 +46,8 @@ table td span {
 
 .non_member.active {
   background-color: rgb(122, 163, 190);
+}
+
+.missions-table col:nth-child(1) {
+  width: 20%;
 }
