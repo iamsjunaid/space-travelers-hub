@@ -14,40 +14,51 @@ table td {
 }
 
 table th {
-  background-color: #f2f2f2;
+  background-color: #fff;
 }
 
 table td span {
   display: inline-block;
   padding: 4px 8px;
-  background-color: #ccc;
-  color: #fff;
   border-radius: 4px;
-  font-weight: bold;
 }
 
 .join-mission {
   background-color: transparent;
   border-color: rgb(48, 46, 46);
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
+  height: 2.5rem;
+  width: 8rem;
+  font-size: 15px;
+  margin-left: 20px;
 }
 
 .leave-mission {
   border: 2px solid red;
   color: red;
+  text-align: center;
 }
 
 .non_member {
   background-color: rgb(123, 122, 122);
   color: #fff;
   border: transparent;
+  text-align: center;
+  margin-left: 8px;
+ border-radius: 7px;
+ min-width: 2px;
 }
 
 .non_member.active {
-  background-color: rgb(122, 163, 190);
+  background-color: #008cac;
+  text-decoration: none;
 }
 
 .missions-table col:nth-child(1) {
   width: 20%;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f3f3f3;
 }

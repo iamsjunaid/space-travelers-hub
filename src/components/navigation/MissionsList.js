@@ -18,8 +18,8 @@ function MissionsList() {
   return (
     <table className="missions-table">
       <colgroup>
-        <col span={1} style={{ width: '10%' }} />
-        <col span={1} style={{ width: '50%' }} />
+        <col span={1} style={{ width: '7%' }} />
+        <col span={1} style={{ width: '53%' }} />
         <col span={1} style={{ width: '10%' }} />
         <col span={1} style={{ width: '10%' }} />
       </colgroup>
