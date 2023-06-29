@@ -1,0 +1,13 @@
+.dragons-table {
+  width: 20%;
+  border-collapse: collapse;
+}
+
+.dragons-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.dragons-table tr:hover {
+  background-color: #e0e0e0;
+}
