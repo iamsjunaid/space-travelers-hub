@@ -4,7 +4,7 @@ import '../../styles/RocketsTable.css';
 
 function RocketsTable({ rockets }) {
   return (
-    <table>
+    <table className="RocketsTable">
       <tbody>
         {rockets.map((rocket) => (
           <tr key={rocket.id}>

@@ -1,10 +1,10 @@
-table,
+.RocketsTable,
 td,
 th {
   border: 1px solid;
 }
 
-table {
+.RocketsTable {
   width: 20%;
   border-collapse: collapse;
 }
