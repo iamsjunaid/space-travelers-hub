@@ -7,7 +7,9 @@ import '../../styles/MyProfile.css';
 function MyProfile() {
   const { rockets } = useSelector((state) => state.rockets);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved === true);
-  const { dragons } = useSelector((state) => state.dragons);
+  const dragonsState = useSelector((state) => state.dragons);
+  // eslint-disable-next-line no-unneeded-ternary
+  const { dragons } = dragonsState ? dragonsState : { dragons: [] };
   const reserveDragon = dragons.filter((dragon) => dragon.reserved === true);
 
   return (
