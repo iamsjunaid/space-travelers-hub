@@ -2,13 +2,37 @@
 
 exports[`renders ProfileRockets correctly 1`] = `
 <div
-  class="rocketsProfile"
+  class="my-profile"
 >
-  <h3>
-    My Rockets
-  </h3>
-  <div>
-    No Rockets Reserved
+  <div
+    class="rockets-profile"
+  >
+    <h3>
+      My Rockets
+    </h3>
+    <div>
+      No Rockets Reserved
+    </div>
+  </div>
+  <div
+    class="missions-profile"
+  >
+    <h3>
+      My Missions
+    </h3>
+    <div>
+      No Missions Reserved
+    </div>
+  </div>
+  <div
+    class="dragons-profile"
+  >
+    <h3>
+      My Dragons
+    </h3>
+    <div>
+      No Dragons Reserved
+    </div>
   </div>
 </div>
 `;
