@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../styles/DragonsTable.css';
+import '../../styles/RocketsTable.css';
 
 const DragonsTable = ({ dragons }) => (
   <table className="dragons-table">
