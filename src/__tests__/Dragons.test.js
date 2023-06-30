@@ -17,8 +17,8 @@ test('renders Dragons component correctly', () => {
 
   const { container } = render(
     <Provider store={store}>
-      <Dragons {...dragon} />
-    </Provider>
+      <Dragons dragons={dragon} />
+    </Provider>,
   );
   expect(container).toMatchSnapshot();
 });
