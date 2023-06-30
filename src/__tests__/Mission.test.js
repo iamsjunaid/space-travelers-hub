@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import React from 'react';
 import store from '../redux/store';
-import Mission from "../components/navigation/Mission";
+import Mission from '../components/navigation/Mission';
 
 describe('User Interactions test', () => {
   const mission = [
