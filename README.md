@@ -27,9 +27,8 @@
 
 # 📖 Space Travelers Hub <a name="about-project"></a>
 
-**Space Travelers Hub** In this project, I have worked with real live data from the SpaceX API. I have built a web application that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
+**Space Travelers Hub** In this project, We have worked with real live data from the SpaceX API. We have built a web application that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
       
- 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
