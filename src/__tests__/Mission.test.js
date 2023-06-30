@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import React from 'react';
 import store from '../redux/store';
-import Rocket from '../components/navigation/Mission';
+import Mission from "../components/navigation/Mission";
 
 describe('User Interactions test', () => {
   const mission = [
@@ -18,7 +18,7 @@ describe('User Interactions test', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <Rocket mission={mission} />
+          <Mission mission={mission} />
         </Provider>,
       )
       .toJSON();
