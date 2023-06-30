@@ -9,7 +9,7 @@ function MissionsList() {
 
   useEffect(() => {
     dispatch(fetchmissions());
-  }, [dispatch]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (isLoading) {
     return <h2 className="missionLoading">Loading...</h2>;

@@ -9,7 +9,7 @@ function DragonsList() {
 
   useEffect(() => {
     dispatch(fetchDragons());
-  }, [dispatch]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (isLoading) {
     return <p className="loading">Loading...</p>;
