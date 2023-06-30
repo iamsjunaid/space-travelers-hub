@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../styles/RocketsTable.css';
 
 function RocketsTable({ rockets }) {
   return (
-    <table className="RocketsTable">
+    <table className="rockets-table">
       <tbody>
         {rockets.map((rocket) => (
           <tr key={rocket.id}>

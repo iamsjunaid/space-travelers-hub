@@ -1,3 +1,20 @@
-.rocketsProfile h3 {
+.my-profile h3 {
   font-weight: normal;
+}
+
+.my-profile {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rockets-table,
+.dragons-table {
+  width: 18em;
+  border-collapse: collapse;
+}
+
+td.rockets-table,
+td.dragons-table {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
