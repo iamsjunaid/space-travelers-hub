@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Dragons component correctly 1`] = `
+<div>
+  <li
+    class="dragon"
+  >
+    <img
+      alt="Dragon Name"
+      src="dragon.jpg"
+    />
+    <div>
+      <p>
+         
+        <span
+          class="heading"
+        >
+          Dragon Name
+        </span>
+      </p>
+      <p>
+        <span>
+          Dragon Type
+        </span>
+      </p>
+      <p>
+        <span>
+          Dragon Description
+        </span>
+      </p>
+      <button
+        class="reserve-btn"
+        type="button"
+      >
+        Reserve Dragon
+      </button>
+    </div>
+  </li>
+</div>
+`;
