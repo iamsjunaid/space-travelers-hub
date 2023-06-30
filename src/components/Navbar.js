@@ -20,7 +20,7 @@ function Navbar() {
         <ul>
           <li>
             <Link
-              to="/rockets"
+              to="/"
               onClick={() => setActiveLink('/rockets')}
               className={activeLink === '/rockets' ? 'active' : ''}
             >
