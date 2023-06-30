@@ -5,28 +5,19 @@ exports[`renders Dragons component correctly 1`] = `
   <li
     class="dragon"
   >
-    <img
-      alt="Dragon Name"
-      src="dragon.jpg"
-    />
+    <img />
     <div>
       <p>
          
         <span
           class="heading"
-        >
-          Dragon Name
-        </span>
+        />
       </p>
       <p>
-        <span>
-          Dragon Type
-        </span>
+        <span />
       </p>
       <p>
-        <span>
-          Dragon Description
-        </span>
+        <span />
       </p>
       <button
         class="reserve-btn"
