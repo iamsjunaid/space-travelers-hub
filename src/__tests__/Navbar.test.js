@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import NavBar from '../components/NavBar';
+import Navbar from "../components/NavBar";
 
 test('renders Navbar correctly', () => {
   const { container } = render(
     <MemoryRouter>
-      <NavBar />
+      <Navbar />
     </MemoryRouter>,
   );
 
