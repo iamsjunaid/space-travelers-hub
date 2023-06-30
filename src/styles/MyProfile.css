@@ -8,13 +8,15 @@
 }
 
 .rockets-table,
-.dragons-table {
+.dragons-table,
+.missions-table {
   width: 18em;
   border-collapse: collapse;
 }
 
 td.rockets-table,
-td.dragons-table {
+td.dragons-table,
+td.missions-table {
   border: 1px solid #ddd;
   padding: 8px;
 }
