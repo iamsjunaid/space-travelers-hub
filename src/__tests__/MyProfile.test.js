@@ -65,7 +65,7 @@ test('renders ProfileRockets correctly', () => {
   const { container } = render(
     <Provider store={store}>
       <MyProfile rockets={rockets} dragons={dragons} missions={missions} />
-    </Provider>
+    </Provider>,
   );
 
   expect(container.firstChild).toMatchSnapshot();
