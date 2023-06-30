@@ -13,24 +13,24 @@ function MyProfile() {
   const reserveDragon = dragons.filter((dragon) => dragon.reserved === true);
 
   return (
-    <>
-      <div className="rocketsProfile">
+    <div className="my-profile">
+      <div className="rockets-profile">
         <h3>My Rockets</h3>
         {reservedRockets.length > 0 ? (
-          <RocketsTable rockets={reservedRockets} />
+          <RocketsTable rockets={reservedRockets} className="rockets-table" />
         ) : (
           <div>No Rockets Reserved</div>
         )}
       </div>
-      <div className="">
+      <div className="dragons-profile">
         <h3>My Dragons</h3>
         {reserveDragon.length > 0 ? (
-          <DragonsTable dragons={reserveDragon} />
+          <DragonsTable dragons={reserveDragon} className="dragons-table" />
         ) : (
           <div>No Dragons Reserved</div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
