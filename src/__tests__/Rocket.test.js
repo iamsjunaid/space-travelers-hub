@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import React from 'react';
-import store from '../../src/redux/store';
+import store from '../redux/store';
 import Rocket from '../components/navigation/Rocket';
 
 describe('User Interactions test', () => {
@@ -19,8 +19,8 @@ describe('User Interactions test', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
-          <Rocket reserved={false} />
-        </Provider>
+          <Rocket rocket={rocket} />
+        </Provider>,
       )
       .toJSON();
 
