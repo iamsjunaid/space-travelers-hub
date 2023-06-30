@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, NavLink } from 'react-router-dom';
 import logo from '../images/planet.png';
 import '../styles/Navbar.css';
 import RocketsList from './navigation/RocketsList';
@@ -19,13 +19,13 @@ function Navbar() {
       <nav className="navbar">
         <ul>
           <li>
-            <Link
+            <NavLink
               to="/"
               onClick={() => setActiveLink('/rockets')}
               className={activeLink === '/rockets' ? 'active' : ''}
             >
               <img src={logo} alt="logo" />
-            </Link>
+            </NavLink>
           </li>
           <li>
             <h1>Space Travelers&apos; Hub</h1>
@@ -33,41 +33,41 @@ function Navbar() {
         </ul>
         <ul>
           <li>
-            <Link
+            <NavLink
               to="/rockets"
               onClick={() => setActiveLink('/rockets')}
               className={activeLink === '/rockets' ? 'active' : ''}
             >
               Rockets
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/missions"
               onClick={() => setActiveLink('/missions')}
               className={activeLink === '/missions' ? 'active' : ''}
             >
               Missions
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
+            <NavLink
               to="/dragons"
               onClick={() => setActiveLink('/dragons')}
               className={activeLink === '/dragons' ? 'active' : ''}
             >
               Dragons
-            </Link>
+            </NavLink>
           </li>
           <li className="vertical-bar" />
           <li>
-            <Link
+            <NavLink
               to="/profile"
               onClick={() => setActiveLink('/quote')}
               className={activeLink === '/quote' ? 'active' : ''}
             >
               My Profile
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
