@@ -17,20 +17,20 @@ function MyProfile() {
 
   return (
     <div className="my-profile">
-      <div className="missions-profile">
-        <h3>My Missions</h3>
-        {reservedMissions.length > 0 ? (
-          <MissionsTable missions={reservedMissions} className="missions-table" />
-        ) : (
-          <div>No Missions Reserved</div>
-        )}
-      </div>
       <div className="rockets-profile">
         <h3>My Rockets</h3>
         {reservedRockets.length > 0 ? (
           <RocketsTable rockets={reservedRockets} className="rockets-table" />
         ) : (
           <div>No Rockets Reserved</div>
+        )}
+      </div>
+      <div className="missions-profile">
+        <h3>My Missions</h3>
+        {reservedMissions.length > 0 ? (
+          <MissionsTable missions={reservedMissions} className="missions-table" />
+        ) : (
+          <div>No Missions Reserved</div>
         )}
       </div>
       <div className="dragons-profile">
