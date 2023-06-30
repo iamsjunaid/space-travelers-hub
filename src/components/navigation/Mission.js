@@ -12,7 +12,7 @@ function Mission({
 }) {
   const dispatch = useDispatch();
   const [isMember, setIsMember] = useState(false);
-
+  console.log(id, name, description, reserved);
   const handleJoinMission = () => {
     dispatch(reserveMission(id));
     setIsMember(true);
