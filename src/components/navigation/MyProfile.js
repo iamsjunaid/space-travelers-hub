@@ -7,6 +7,7 @@ import '../../styles/MyProfile.css';
 
 function MyProfile() {
   const { missions } = useSelector((state) => state.missions);
+  console.log(missions);
   const reservedMissions = missions.filter((mission) => mission.reserved === true);
   const { rockets } = useSelector((state) => state.rockets);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved === true);
