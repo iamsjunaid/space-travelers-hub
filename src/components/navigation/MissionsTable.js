@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function MissionsTable({ missions }) {
   return (
-    <table className="RocketsTable">
+    <table className="missions-table">
       <tbody>
         {missions.map((mission) => (
           <tr key={mission.id}>
@@ -18,7 +18,7 @@ function MissionsTable({ missions }) {
 MissionsTable.propTypes = {
   missions: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
       name: PropTypes.string,
     }),
   ).isRequired,
