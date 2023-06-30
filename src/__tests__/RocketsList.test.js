@@ -5,7 +5,7 @@ import React from 'react';
 import store from '../redux/store';
 import RocketsList from '../components/navigation/RocketsList';
 
-describe('User Interactions test', () => { 
+describe('User Interactions test', () => {
   it('will test user interaction', () => {
     const tree = renderer
       .create(
