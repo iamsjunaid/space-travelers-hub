@@ -13,7 +13,8 @@
   border-collapse: collapse;
 }
 
-td.rockets-table ,td.dragons-table {
+td.rockets-table,
+td.dragons-table {
   border: 1px solid #ddd;
   padding: 8px;
 }
