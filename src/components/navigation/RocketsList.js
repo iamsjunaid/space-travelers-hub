@@ -10,7 +10,7 @@ function RocketsList() {
 
   useEffect(() => {
     dispatch(fetchRockets());
-  }, [dispatch]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (isLoading) {
     return <h2 className="rocketsLoading">Loading...</h2>;
