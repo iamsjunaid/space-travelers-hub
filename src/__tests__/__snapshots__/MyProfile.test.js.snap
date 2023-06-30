@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ProfileRockets correctly 1`] = `
+<div
+  class="rocketsProfile"
+>
+  <h3>
+    My Rockets
+  </h3>
+  <div>
+    No Rockets Reserved
+  </div>
+</div>
+`;
