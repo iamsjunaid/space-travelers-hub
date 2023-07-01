@@ -42,12 +42,12 @@ function Dragons({
         </p>
 
         {!isReserved && (
-          <button className="reserve-btn" type="button" onClick={handleJoinMission()}>
+          <button className="reserve-btn" type="button" onClick={handleJoinMission}>
             Reserve Dragon
           </button>
         )}
         {isReserved && (
-          <button className="cancel" type="button" onClick={handleLeaveMission()}>
+          <button className="cancel" type="button" onClick={handleLeaveMission}>
             Cancel Reservation
           </button>
         )}
