@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User Interactions test will test user interaction 1`] = `
+<li
+  className="rocket"
+>
+  <img />
+  <div>
+    <h3 />
+    <div>
+      <p>
+         
+        <span />
+      </p>
+    </div>
+    <button
+      className="reserve-rocket"
+      onClick={[Function]}
+      type="button"
+    >
+      Reserve Rocket
+    </button>
+  </div>
+</li>
+`;

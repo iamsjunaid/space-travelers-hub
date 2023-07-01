@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Navbar correctly 1`] = `
+<div>
+  <nav
+    class="navbar"
+  >
+    <ul>
+      <li>
+        <a
+          aria-current="page"
+          class="active active"
+          href="/"
+        >
+          <img
+            alt="logo"
+            src="planet.png"
+          />
+        </a>
+      </li>
+      <li>
+        <h1>
+          Space Travelers' Hub
+        </h1>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a
+          class="active"
+          href="/rockets"
+        >
+          Rockets
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/missions"
+        >
+          Missions
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
+          href="/dragons"
+        >
+          Dragons
+        </a>
+      </li>
+      <li
+        class="vertical-bar"
+      />
+      <li>
+        <a
+          class=""
+          href="/profile"
+        >
+          My Profile
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
