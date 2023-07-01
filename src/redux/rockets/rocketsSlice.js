@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   rockets: [],
+  reservedRocketIds: [], // New state to keep track of reserved rocket IDs
   isLoading: true,
 };
 
@@ -25,23 +26,14 @@ export const rocketsSlice = createSlice({
   initialState,
   reducers: {
     reserveRocket: (state, action) => {
-      const newRockets = state.rockets.map((rocket) => {
-        if (rocket.id !== action.payload) return rocket;
-        return { ...rocket, reserved: true };
-      });
-      return {
-        ...state,
-        rockets: newRockets,
-      };
+      const rocketId = action.payload;
+      state.reservedRocketIds.push(rocketId);
     },
     cancelReserve: (state, action) => {
-      const newRockets = state.rockets.map((rocket) => {
-        if (rocket.id !== action.payload) return rocket;
-        return { ...rocket, reserved: false };
-      });
+      const rocketId = action.payload;
       return {
         ...state,
-        rockets: newRockets,
+        reservedRocketIds: state.reservedRocketIds.filter((id) => id !== rocketId),
       };
     },
   },
@@ -52,13 +44,12 @@ export const rocketsSlice = createSlice({
         isLoading: true,
       }))
       .addCase(fetchRockets.fulfilled, (state, action) => {
-        const newRockets = [];
-        action.payload.map((rocket) => newRockets.push({
+        const newRockets = action.payload.map((rocket) => ({
           id: rocket.id,
           name: rocket.rocket_name,
           description: rocket.description,
           image: rocket.flickr_images[0],
-          reserved: false,
+          reserved: state.reservedRocketIds.includes(rocket.id),
         }));
         return {
           ...state,

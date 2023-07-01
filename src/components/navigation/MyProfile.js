@@ -1,19 +1,36 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRockets } from '../../redux/rockets/rocketsSlice';
+import { fetchMissions } from '../../redux/missions/missionsSlice';
 import RocketsTable from './RocketsTable';
 import DragonsTable from './DragonsTable';
 import MissionsTable from './MissionsTable';
 import '../../styles/MyProfile.css';
 
 function MyProfile() {
+  const dispatch = useDispatch();
   const { missions } = useSelector((state) => state.missions);
-  const reservedMissions = missions.filter((mission) => mission.reserved === true);
-  const { rockets } = useSelector((state) => state.rockets);
+  // const reservedMissions = missions.filter((mission) => mission.reserved === true);
+  console.log(missions);
+  const { rockets, isLoading } = useSelector((state) => state.rockets);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved === true);
+  // console.log(rockets);
   const dragonsState = useSelector((state) => state.dragons);
   // eslint-disable-next-line no-unneeded-ternary
   const { dragons } = dragonsState ? dragonsState : { dragons: [] };
   const reserveDragon = dragons.filter((dragon) => dragon.reserved === true);
+
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchMissions());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="my-profile">
@@ -27,8 +44,8 @@ function MyProfile() {
       </div>
       <div className="missions-profile">
         <h3>My Missions</h3>
-        {reservedMissions.length > 0 ? (
-          <MissionsTable missions={reservedMissions} className="missions-table" />
+        {missions.length > 0 ? (
+          <MissionsTable missions={missions} className="missions-table" />
         ) : (
           <div>No Missions Reserved</div>
         )}
