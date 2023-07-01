@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRockets } from '../../redux/rockets/rocketsSlice';
 import { fetchMissions } from '../../redux/missions/missionsSlice';
+import { fetchDragons } from '../../redux/dragons/dragonsSlice';
 import RocketsTable from './RocketsTable';
 import DragonsTable from './DragonsTable';
 import MissionsTable from './MissionsTable';
@@ -25,6 +26,10 @@ function MyProfile() {
 
   useEffect(() => {
     dispatch(fetchMissions());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchDragons());
   }, [dispatch]);
 
   if (isLoading) {

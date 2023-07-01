@@ -1,20 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cancelReservation, reserveDragon } from '../redux/dragons/dragonsSlice';
 import '../styles/Dragon.css';
 
 function Dragons({
-  id, name, type, image, description, reserved,
+  id, name, type, image, description,
 }) {
   const dispatch = useDispatch();
+  const reservedDragonIds = useSelector((state) => state.dragons.reservedDragonIds);
+  const isReserved = reservedDragonIds.includes(id);
+
+  const handleJoinMission = () => {
+    dispatch(reserveDragon(id));
+  };
+
+  const handleLeaveMission = () => {
+    dispatch(cancelReservation(id));
+  };
 
   return (
     <li className="dragon">
       <img src={image} alt={name} />
       <div>
         <p>
-          {reserved && <span className="reserved">Reserved</span>}
+          {isReserved && <span className="reserved">Reserved</span>}
           {' '}
           <span className="heading">
             {name}
@@ -31,15 +41,15 @@ function Dragons({
           </span>
         </p>
 
-        {!reserved && (
-        <button className="reserve-btn" type="button" onClick={() => dispatch(reserveDragon(id))}>
-          Reserve Dragon
-        </button>
+        {!isReserved && (
+          <button className="reserve-btn" type="button" onClick={handleJoinMission()}>
+            Reserve Dragon
+          </button>
         )}
-        {reserved && (
-        <button className="cancel" type="button" onClick={() => dispatch(cancelReservation(id))}>
-          Cancel Reservation
-        </button>
+        {isReserved && (
+          <button className="cancel" type="button" onClick={handleLeaveMission()}>
+            Cancel Reservation
+          </button>
         )}
       </div>
     </li>
@@ -53,7 +63,6 @@ Dragons.propTypes = {
   type: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
 };
 
 export default Dragons;
