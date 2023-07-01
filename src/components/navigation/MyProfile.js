@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRockets } from '../../redux/rockets/rocketsSlice';
-import { fetchMissions } from '../../redux/missions/missionsSlice';
+import { fetchmissions } from '../../redux/missions/missionsSlice';
 import RocketsTable from './RocketsTable';
 import DragonsTable from './DragonsTable';
 import MissionsTable from './MissionsTable';
@@ -10,8 +10,7 @@ import '../../styles/MyProfile.css';
 function MyProfile() {
   const dispatch = useDispatch();
   const { missions } = useSelector((state) => state.missions);
-  // const reservedMissions = missions.filter((mission) => mission.reserved === true);
-  console.log(missions);
+  const reservedMissions = missions.filter((mission) => mission.reserved === true);
   const { rockets, isLoading } = useSelector((state) => state.rockets);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved === true);
   // console.log(rockets);
@@ -25,7 +24,7 @@ function MyProfile() {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchMissions());
+    dispatch(fetchmissions());
   }, [dispatch]);
 
   if (isLoading) {
@@ -44,8 +43,8 @@ function MyProfile() {
       </div>
       <div className="missions-profile">
         <h3>My Missions</h3>
-        {missions.length > 0 ? (
-          <MissionsTable missions={missions} className="missions-table" />
+        {reservedMissions.length > 0 ? (
+          <MissionsTable missions={reservedMissions} className="missions-table" />
         ) : (
           <div>No Missions Reserved</div>
         )}
