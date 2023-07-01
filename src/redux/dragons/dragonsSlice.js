@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   dragons: [],
+  reservedDragonIds: [],
   isLoading: true,
 };
 
@@ -22,23 +23,14 @@ export const dragonsSlice = createSlice({
   initialState,
   reducers: {
     reserveDragon: (state, action) => {
-      const newDragons = state.dragons.map((dragon) => {
-        if (dragon.id !== action.payload) return dragon;
-        return { ...dragon, reserved: true };
-      });
-      return {
-        ...state,
-        dragons: newDragons,
-      };
+      const dragonId = action.payload;
+      state.reservedDragonIds.push(dragonId);
     },
     cancelReservation: (state, action) => {
-      const newDragons = state.dragons.map((dragon) => {
-        if (dragon.id !== action.payload) return dragon;
-        return { ...dragon, reserved: false };
-      });
+      const dragonId = action.payload;
       return {
         ...state,
-        dragons: newDragons,
+        reservedDragonIds: state.reservedDragonIds.filter((id) => id !== dragonId),
       };
     },
   },
@@ -56,7 +48,7 @@ export const dragonsSlice = createSlice({
           type: dragon.type,
           image: dragon.flickr_images[0],
           description: dragon.description,
-          reserved: false,
+          reserved: state.reservedDragonIds.includes(dragon.id),
         }));
         return {
           ...state,

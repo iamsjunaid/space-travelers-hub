@@ -1,13 +1,24 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { reserveRocket, cancelReserve } from '../../redux/rockets/rocketsSlice';
 import '../../styles/Rocket.css';
 
 function Rocket({
-  id, name, description, image, reserved,
+  id, name, description, image,
 }) {
   const dispatch = useDispatch();
+  const reservedRocketIds = useSelector((state) => state.rockets.reservedRocketIds);
+  const isReserved = reservedRocketIds.includes(id);
+
+  const handleReserveClick = () => {
+    if (isReserved) {
+      dispatch(cancelReserve(id));
+    } else {
+      dispatch(reserveRocket(id));
+    }
+  };
+
   return (
     <li className="rocket">
       <img src={image} alt={name} />
@@ -15,23 +26,16 @@ function Rocket({
         <h3>{name}</h3>
         <div>
           <p>
-            {reserved && <span className="reserved">Reserved</span>}
+            {isReserved && <span className="reserved">Reserved</span>}
             {' '}
             <span>
               {description}
             </span>
           </p>
         </div>
-        {!reserved && (
-          <button className="reserve-rocket" type="button" onClick={() => dispatch(reserveRocket(id))}>
-            Reserve Rocket
-          </button>
-        )}
-        {reserved && (
-          <button className="cancel-rocket" type="button" onClick={() => dispatch(cancelReserve(id))}>
-            Cancel Reservation
-          </button>
-        )}
+        <button className={isReserved ? 'cancel-rocket' : 'reserve-rocket'} type="button" onClick={handleReserveClick}>
+          {isReserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+        </button>
       </div>
     </li>
   );
@@ -42,7 +46,6 @@ Rocket.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
 };
 
 export default Rocket;

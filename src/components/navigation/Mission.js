@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// Mission.js
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   reserveMission,
@@ -8,18 +9,18 @@ import {
 import '../../styles/Mission.css';
 
 function Mission({
-  id, name, description, reserved,
+  id, name, description,
 }) {
   const dispatch = useDispatch();
-  const [isMember, setIsMember] = useState(false);
+  const reservedMissionIds = useSelector((state) => state.missions.reservedMissionIds);
+  const isReserved = reservedMissionIds.includes(id);
+
   const handleJoinMission = () => {
     dispatch(reserveMission(id));
-    setIsMember(true);
   };
 
   const handleLeaveMission = () => {
     dispatch(cancelReserve(id));
-    setIsMember(false);
   };
 
   return (
@@ -27,12 +28,12 @@ function Mission({
       <td><h4>{name}</h4></td>
       <td><span className="description">{description}</span></td>
       <td>
-        <span className={`non_member ${isMember ? 'active' : ''}`}>
-          {isMember ? 'Active Member' : 'Not A Member'}
+        <span className={`non_member ${isReserved ? 'active' : ''}`}>
+          {isReserved ? 'Active Member' : 'Not A Member'}
         </span>
       </td>
       <td>
-        {!reserved && (
+        {!isReserved && (
           <button
             className="join-mission"
             type="button"
@@ -41,7 +42,7 @@ function Mission({
             Join Mission
           </button>
         )}
-        {reserved && (
+        {isReserved && (
           <button
             className="leave-mission join-mission"
             type="button"
@@ -59,7 +60,6 @@ Mission.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
 };
 
 export default Mission;
