@@ -1,14 +1,16 @@
+// missionSclice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   missions: [],
+  reservedMissionIds: [], // New state to keep track of reserved mission IDs
   isLoading: true,
 };
 
 const missionsEndpoint = 'https://api.spacexdata.com/v3/missions';
 
-export const fetchmissions = createAsyncThunk(
-  'missions/fetchmissions',
+export const fetchMissions = createAsyncThunk(
+  'missions/fetchMissions',
   async () => {
     try {
       const response = await fetch(missionsEndpoint);
@@ -25,47 +27,37 @@ export const missionsSlice = createSlice({
   initialState,
   reducers: {
     reserveMission: (state, action) => {
-      const newMissions = state.missions.map((mission) => {
-        if (mission.id !== action.payload) return mission;
-        return { ...mission, reserved: true };
-      });
-      return {
-        ...state,
-        missions: newMissions,
-      };
+      const missionId = action.payload;
+      state.reservedMissionIds.push(missionId);
     },
     cancelReserve: (state, action) => {
-      const newMissions = state.missions.map((rocket) => {
-        if (rocket.id !== action.payload) return rocket;
-        return { ...rocket, reserved: false };
-      });
+      const missionId = action.payload;
       return {
         ...state,
-        missions: newMissions,
+        reservedMissionIds: state.reservedMissionIds.filter((id) => id !== missionId),
       };
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchmissions.pending, (state) => ({
+      .addCase(fetchMissions.pending, (state) => ({
         ...state,
         isLoading: true,
       }))
-      .addCase(fetchmissions.fulfilled, (state, action) => {
-        const newmissions = [];
-        action.payload.map((mission) => newmissions.push({
+      .addCase(fetchMissions.fulfilled, (state, action) => {
+        const newMissions = action.payload.map((mission) => ({
           id: mission.mission_id,
           name: mission.mission_name,
           description: mission.description,
-          reserved: false,
+          reserved: state.reservedMissionIds.includes(mission.mission_id),
         }));
         return {
           ...state,
           isLoading: false,
-          missions: newmissions,
+          missions: newMissions,
         };
       })
-      .addCase(fetchmissions.rejected, (state) => ({
+      .addCase(fetchMissions.rejected, (state) => ({
         ...state,
         isLoading: false,
       }));

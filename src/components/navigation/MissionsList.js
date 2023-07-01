@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchmissions } from '../../redux/missions/missionsSlice';
+import { fetchMissions } from '../../redux/missions/missionsSlice';
 import Mission from './Mission';
 
 function MissionsList() {
@@ -8,7 +8,7 @@ function MissionsList() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchmissions());
+    dispatch(fetchMissions());
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (isLoading) {
