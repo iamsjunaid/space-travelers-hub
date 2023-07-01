@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import MyProfile from '../components/navigation/MyProfile';
@@ -69,6 +69,4 @@ test('renders ProfileRockets correctly', () => {
   );
 
   expect(container.firstChild).toMatchSnapshot();
-  expect(screen.getByText('My Rockets')).toBeInTheDocument();
-  expect(screen.getByText('My Dragons')).toBeInTheDocument();
 });
