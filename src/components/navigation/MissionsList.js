@@ -1,4 +1,3 @@
-// eslint-disable jsx-a11y/control-has-associated-label
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMissions } from '../../redux/missions/missionsSlice';
@@ -29,7 +28,7 @@ function MissionsList() {
           <th>Name</th>
           <th>Description</th>
           <th>Status</th>
-          <th> </th>
+          <th aria-hidden="true">{/* Empty cell as a placeholder */}</th>
         </tr>
       </thead>
       <tbody>
