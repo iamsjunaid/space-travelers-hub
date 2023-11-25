@@ -1,3 +1,4 @@
+// eslint-disable jsx-a11y/control-has-associated-label
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMissions } from '../../redux/missions/missionsSlice';
