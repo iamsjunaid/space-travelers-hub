@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import logo from '../images/planet.png';
 import '../styles/Navbar.css';
 import RocketsList from './navigation/RocketsList';
 import MissionsList from './navigation/MissionsList';
 import DragonsList from './navigation/DragonsList';
 import MyProfile from './navigation/MyProfile';
+import { fetchRockets } from '../redux/rockets/rocketsSlice';
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState('/');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setActiveLink('/rockets'); // Set '/rockets' as the default active link
-  }, []);
+    fetchRockets();
+  }, [dispatch]);
 
   return (
     <>
@@ -21,8 +25,8 @@ function Navbar() {
           <li>
             <NavLink
               to="/"
-              onClick={() => setActiveLink('/rockets')}
-              className={activeLink === '/rockets' ? 'active' : ''}
+              onClick={() => setActiveLink('/')}
+              className={activeLink === '/' ? 'active' : ''}
             >
               <img src={logo} alt="logo" />
             </NavLink>

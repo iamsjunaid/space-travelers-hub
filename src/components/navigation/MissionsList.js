@@ -28,7 +28,7 @@ function MissionsList() {
           <th>Name</th>
           <th>Description</th>
           <th>Status</th>
-          <th> </th>
+          <th aria-hidden="true">{/* Empty cell as a placeholder */}</th>
         </tr>
       </thead>
       <tbody>
